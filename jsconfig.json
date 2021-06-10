@@ -1,0 +1,9 @@
+{
+  "include": ["src/**/*"],
+  "compilerOptions": {
+    "module": "es6",
+    "target": "es2019",
+    "types": ["cypress"]
+  },
+  "exclude": ["node_modules"]
+}
