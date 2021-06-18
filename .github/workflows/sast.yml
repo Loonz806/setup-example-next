@@ -1,4 +1,4 @@
-name: Build
+name: Sast
 on:
   push:
     branches:
