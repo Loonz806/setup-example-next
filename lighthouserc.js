@@ -2,7 +2,7 @@
 module.exports = {
   ci: {
     collect: {
-      staticDistDir: "./next",
+      staticDistDir: ".next/",
       budgetPath: "./budget.json",
     },
     upload: {
