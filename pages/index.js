@@ -8,8 +8,10 @@ const HomePage = () => {
       <Head>
         <title>Setup Example Next | Lenny Peters</title>
       </Head>
-      <h1>Hello World</h1>
-      <ExampleComponent />
+      <main>
+        <h1>Hello World</h1>
+        <ExampleComponent />
+      </main>
     </>
   );
 };
