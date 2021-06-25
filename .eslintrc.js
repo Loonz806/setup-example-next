@@ -11,6 +11,7 @@ module.exports = {
     "plugin:prettier/recommended",
     "plugin:security/recommended",
     "plugin:jsx-a11y/recommended",
+    "plugin:cypress/recommended",
     "next",
   ],
   parserOptions: {
