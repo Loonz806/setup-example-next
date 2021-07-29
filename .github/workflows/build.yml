@@ -109,12 +109,12 @@ jobs:
     needs: [build]
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - uses: actions/cache@v2
         with:
           path: "**/node_modules"
           key: ${{ runner.os }}-modules-${{ hashFiles('**/package-lock.json') }}
-        with:
-          fetch-depth: 0
       - name: Get master
         run: git fetch origin main
       - name: Install dependencies
