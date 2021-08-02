@@ -33,6 +33,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+      - run: npm install
       - run: npm run lint
       - run: npm run format
   test:
@@ -47,6 +48,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+      - run: npm install
       - run: npm run coverage
   e2e_visual_a11y:
     runs-on: ubuntu-latest
@@ -60,6 +62,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+      - run: npm install
       - run: npm run build
       - run: npm run e2e:test
         env:
@@ -76,6 +79,7 @@ jobs:
         with:
           node-version: 14.x
       - run: npm install -g @lhci/cli@0.7.x
+      - run: npm install
       - run: npm run build
       - run: lhci autorun
         env:
@@ -93,6 +97,8 @@ jobs:
           fetch-depth: 0
       - name: Get master
         run: git fetch origin main
+      - name: Install dependencies
+        run: npm install
       - name: Install Jest globally
         run: sudo npm install -g jest
       - name: Run Tests
