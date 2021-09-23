@@ -73,7 +73,7 @@
     "start-server-and-test": "^1.12.5"
   },
   "dependencies": {
-    "@babel/runtime": "7.15.3",
+    "@babel/runtime": "7.15.4",
     "identity-obj-proxy": "^3.0.0",
     "next": "^11.1.0",
     "next-images": "^1.8.1",
