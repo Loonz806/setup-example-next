@@ -1,0 +1,40 @@
+{
+  "posts": [
+    {
+      "id":1,
+      "title":"My first blog post",
+      "author": "Lenny Peters",
+      "date": "2022-01-05",
+      "content": "banana's are the best"
+    },
+    {
+      "id": 2,
+      "title": "Today was a strange day",
+      "author": "Lenny Peters",
+      "date": "2022-01-06",
+      "content": "It started raining for no reason."
+    },
+    {
+      "id": 3,
+      "title": "Why don't they make bacon?",
+      "author": "Lenny Peters",
+      "date": "2022-01-06",
+      "content": "Shocked how many times I don't see omelette's with bacon on the menu."
+    },
+    {
+      "id": 4,
+      "title": "Traffic ticket",
+      "author": "Lenny Peters",
+      "date": "2022-01-07",
+      "content": "I guess I shouldn't speed"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "postId": 1,
+      "author": "Lenny Peters",
+      "content": "This is the best blog post ever!"
+    }
+  ]
+}
