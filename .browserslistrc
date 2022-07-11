@@ -2,4 +2,4 @@
 
 defaults
 not IE 11
-maintained node versions
+# https://stackoverflow.com/questions/69443755/error-when-running-webpack-script-for-simple-project

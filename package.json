@@ -28,12 +28,6 @@
   "author": "loonz806 <@loonz806>",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.14.5",
-    "@babel/plugin-syntax-jsx": "^7.14.5",
-    "@babel/plugin-transform-runtime": "^7.14.5",
-    "@babel/polyfill": "^7.12.1",
-    "@babel/preset-env": "^7.14.5",
-    "@babel/preset-react": "^7.14.5",
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
     "@percy/cli": "^1.0.0-beta.55",
@@ -73,10 +67,10 @@
     "lint-staged": "^11.0.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.3.0",
-    "start-server-and-test": "^1.12.5"
+    "start-server-and-test": "^1.12.5",
+    "storybook-addon-swc": "^1.1.7"
   },
   "dependencies": {
-    "@babel/runtime": "7.17.9",
     "identity-obj-proxy": "^3.0.0",
     "json-server": "^0.17.0",
     "next": "^12.1.6",
