@@ -1,8 +1,8 @@
 {
   "posts": [
     {
-      "id":1,
-      "title":"My first blog post",
+      "id": 1,
+      "title": "My first blog post",
       "author": "Lenny Peters",
       "date": "2022-01-05",
       "content": "banana's are the best"
