@@ -1,15 +1,28 @@
+/**
+ * @type {import('next').NextConfig}
+ */
 const path = require("path");
-const withImages = require("next-images");
-module.exports = withImages({
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true",
+});
+
+module.exports = withBundleAnalyzer({
+  images: {
+    formats: ["image/avif", "image/webp"],
+    minimumCacheTTL: 60,
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "assets.vercel.com",
+        pathname: "/image/upload/**",
+      },
+    ],
+  },
   swcMinify: true,
-  exclude: path.resolve(__dirname, "src/assets/svg"),
+  sassOptions: {
+    includePaths: [path.join(__dirname, "styles")],
+  },
   webpack(config, options) {
     return config;
   },
 });
-
-module.exports = {
-  sassOptions: {
-    includePaths: [path.join(__dirname, "styles")],
-  },
-};
