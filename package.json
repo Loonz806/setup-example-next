@@ -80,7 +80,7 @@
     "nprogress": "^0.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "sass": "^1.58.2"
+    "sass": "^1.58.3"
   },
   "jestSonar": {
     "reportPath": "./coverage/",
