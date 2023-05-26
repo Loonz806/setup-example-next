@@ -21,17 +21,18 @@ const HomePage = ({ posts }) => {
 };
 
 export async function getStaticProps() {
-  // try {
-  //   const res = await fetch("http://localhost:3000/posts");
-  //   const posts = await res.json();
-  //   return {
-  //     props: {
-  //       posts,
-  //     },
-  //   };
-  // } catch (error) {
-  //   console.log(error);
-  // }
+  try {
+    const res = await fetch("http://localhost:3000/posts");
+    const posts = await res.json();
+    return {
+      props: {
+        posts,
+      },
+    };
+  } catch (error) {
+    console.log(error);
+    return {};
+  }
 }
 
 export default HomePage;
