@@ -3,7 +3,7 @@ import Head from "next/head";
 import ExampleComponent from "../src/components/ExampleComponent/ExampleComponent";
 
 const HomePage = ({ posts }) => {
-  console.log("POSTS", posts);
+  // console.log("POSTS", posts);
   return (
     <>
       <Head>
@@ -21,18 +21,17 @@ const HomePage = ({ posts }) => {
 };
 
 export async function getStaticProps() {
-  try {
-    const res = await fetch("http://localhost:3000/posts");
-    const posts = await res.json();
-
-    return {
-      props: {
-        posts,
-      },
-    };
-  } catch (error) {
-    console.log(error);
-  }
+  // try {
+  //   const res = await fetch("http://localhost:3000/posts");
+  //   const posts = await res.json();
+  //   return {
+  //     props: {
+  //       posts,
+  //     },
+  //   };
+  // } catch (error) {
+  //   console.log(error);
+  // }
 }
 
 export default HomePage;
