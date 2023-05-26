@@ -1,4 +1,5 @@
 import React from "react";
+import Script from "next/script";
 import Document, { Html, Head, Main, NextScript } from "next/document";
 
 class MyDocument extends Document {
@@ -11,7 +12,14 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head />
+        <Head>
+          <Script
+            src="https://code.jquery.com/jquery-3.6.4.slim.min.js"
+            integrity="sha256-a2yjHM4jnF9f54xUQakjZGaqYs/V1CYvWpoqZzC2/Bw="
+            crossOrigin="anonymous"
+            strategy="beforeInteractive"
+          />
+        </Head>
         <body>
           {/* Outside of main will NOT be initialized by the browser, no app logic */}
           <Main />
