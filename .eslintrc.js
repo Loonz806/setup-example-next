@@ -13,6 +13,7 @@ module.exports = {
     "plugin:jsx-a11y/recommended",
     "plugin:cypress/recommended",
     "next",
+    "plugin:storybook/recommended",
   ],
   parserOptions: {
     ecmaFeatures: {

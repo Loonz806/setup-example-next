@@ -4,8 +4,20 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "storybook-addon-swc",
+    "@storybook/addon-mdx-gfm",
   ],
-  core: {
-    builder: "webpack5",
+  framework: {
+    name: "@storybook/nextjs",
+    options: {},
   },
+  webpackFinal: async (config, { configType }) => {
+    const path = require('path');
+
+    config.module.rules.push({
+      test: /\.css$/,
+      use: ['style-loader', 'css-loader'],
+      include: path.resolve(__dirname, '../src'),
+    });
+    return config;
+  }
 };
