@@ -11,13 +11,13 @@ module.exports = {
     options: {},
   },
   webpackFinal: async (config, { configType }) => {
-    const path = require('path');
+    const path = require("path");
 
     config.module.rules.push({
       test: /\.css$/,
-      use: ['style-loader', 'css-loader'],
-      include: path.resolve(__dirname, '../src'),
+      use: ["style-loader", "css-loader"],
+      include: path.resolve(__dirname, "../src"),
     });
     return config;
-  }
+  },
 };
