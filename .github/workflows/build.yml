@@ -67,8 +67,6 @@ jobs:
       - name: Install npm
         if: steps.npm-cache.outputs.cache-hit != 'true'
         run: npm install
-      - name: Cypress install
-        run: cypress install
       - name: Run Coverage
         run: npm run coverage
   e2e_visual_a11y:
@@ -91,6 +89,8 @@ jobs:
       - name: Install npm
         if: steps.npm-cache.outputs.cache-hit != 'true'
         run: npm install
+      - name: Cypress install
+        run: cypress install
       - name: Run Build
         run: npm run build
       - name: Run e2e
