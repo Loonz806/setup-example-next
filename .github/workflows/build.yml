@@ -31,13 +31,22 @@ jobs:
     needs: build
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm install
-      - run: npm run lint
-      - run: npm run format
+      - uses: actions/cache@v3
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+      - name: Install npm
+        if: steps.npm-cache.outputs.cache-hit != 'true'
+        run: npm install
+      - name: Run lint
+        run: npm run lint
+      - name: Run format
+        run: npm run format
   test:
     runs-on: ubuntu-latest
     strategy:
@@ -46,12 +55,20 @@ jobs:
     needs: build
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm install
-      - run: npm run coverage
+      - uses: actions/cache@v3
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+      - name: Install npm
+        if: steps.npm-cache.outputs.cache-hit != 'true'
+        run: npm install
+      - name: Run Coverage
+        run: npm run coverage
   e2e_visual_a11y:
     runs-on: ubuntu-latest
     strategy:
@@ -60,13 +77,22 @@ jobs:
     needs: [build]
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm install
-      - run: npm run build
-      - run: npm run e2e:test
+      - uses: actions/cache@v3
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+      - name: Install npm
+        if: steps.npm-cache.outputs.cache-hit != 'true'
+        run: npm install
+      - name: Run Build
+        run: npm run build
+      - name: Run e2e
+        run: npm run e2e:test
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
   lighthouseci:
