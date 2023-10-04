@@ -1,40 +1,40 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "My first blog post",
-      "author": "Lenny Peters",
-      "date": "2022-01-05",
-      "content": "banana's are the best"
+      "title": "Biking",
+      "author": "Lenny",
+      "content": "Biking is fun",
+      "date": "2023-12-05",
+      "id": 1
     },
     {
-      "id": 2,
-      "title": "Today was a strange day",
-      "author": "Lenny Peters",
-      "date": "2022-01-06",
-      "content": "It started raining for no reason."
+      "title": "skateboarding",
+      "author": "Kat",
+      "content": "Running is fun",
+      "date": "2023-12-06",
+      "id": 2
     },
     {
-      "id": 3,
-      "title": "Why don't they make bacon?",
-      "author": "Lenny Peters",
-      "date": "2022-01-06",
-      "content": "Shocked how many times I don't see omelette's with bacon on the menu."
+      "title": "This is a new title",
+      "author": "lenny",
+      "content": "Lets see this new edit page",
+      "date": "",
+      "id": 3
     },
     {
-      "id": 4,
-      "title": "Traffic ticket",
-      "author": "Lenny Peters",
-      "date": "2022-01-07",
-      "content": "I guess I shouldn't speed"
+      "title": "Hello its me",
+      "author": "Amber",
+      "content": "Eating chocolate is wonderful",
+      "date": "",
+      "id": 4
+    },
+    {
+      "title": "Chicken Is Delicious ",
+      "author": "Lenny",
+      "content": "Its a wonderful protein",
+      "date": "Sat Dec 09 2023",
+      "id": 5
     }
   ],
-  "comments": [
-    {
-      "id": 1,
-      "postId": 1,
-      "author": "Lenny Peters",
-      "content": "This is the best blog post ever!"
-    }
-  ]
+  "comments": []
 }
