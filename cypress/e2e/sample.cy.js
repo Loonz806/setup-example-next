@@ -7,7 +7,7 @@ describe("the setup-example page", () => {
       "log",
       `${violations.length} accessibility violation${
         violations.length === 1 ? "" : "s"
-      } ${violations.length === 1 ? "was" : "were"} detected`
+      } ${violations.length === 1 ? "was" : "were"} detected`,
     );
     // pluck specific keys to keep the table readable
     const violationData = violations.map(
@@ -16,7 +16,7 @@ describe("the setup-example page", () => {
         impact,
         description,
         nodes: nodes.length,
-      })
+      }),
     );
 
     cy.task("table", violationData);
@@ -35,7 +35,7 @@ describe("the setup-example page", () => {
       {
         includedImpacts: ["critical"],
       },
-      terminalLog
+      terminalLog,
     );
   });
 
@@ -48,7 +48,7 @@ describe("the setup-example page", () => {
       {
         includedImpacts: ["critical"],
       },
-      terminalLog
+      terminalLog,
     );
   });
 
@@ -60,13 +60,13 @@ describe("the setup-example page", () => {
       {
         includedImpacts: ["critical"],
       },
-      terminalLog
+      terminalLog,
     );
   });
 
   it("should find my example component", () => {
     cy.findByRole("heading", { name: /i am an example component/i }).should(
-      "exist"
+      "exist",
     );
     cy.percySnapshot("finds the example component");
     cy.checkA11y(
@@ -74,7 +74,7 @@ describe("the setup-example page", () => {
       {
         includedImpacts: ["critical"],
       },
-      terminalLog
+      terminalLog,
     );
   });
 });
