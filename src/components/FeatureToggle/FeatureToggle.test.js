@@ -11,7 +11,7 @@ describe("FeatureToggle", () => {
     const { getByText } = render(
       <FeatureToggle enabledFeatures={true}>
         <div>feature1</div>
-      </FeatureToggle>
+      </FeatureToggle>,
     );
     expect(getByText("feature1")).toBeInTheDocument();
   });

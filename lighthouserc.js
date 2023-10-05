@@ -2,6 +2,9 @@
 module.exports = {
   ci: {
     collect: {
+      settings: {
+        hostname: "127.0.0.1",
+      },
       staticDistDir: ".next/",
       budgetPath: "./budget.json",
     },

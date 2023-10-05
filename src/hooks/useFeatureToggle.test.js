@@ -13,7 +13,7 @@ describe("useFeatureToggle", () => {
   // it should return false if the feature is not enabled
   it("should return false if the feature is not enabled", () => {
     const { result } = renderHook(() =>
-      useFeatureToggle({ enabledFeatures: ["feature1"] })
+      useFeatureToggle({ enabledFeatures: ["feature1"] }),
     );
     expect(result.current[0]("feature2")).toBe(false);
   });
