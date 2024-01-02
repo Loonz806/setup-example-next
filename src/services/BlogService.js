@@ -14,7 +14,7 @@ export const createPost = async (data) => {
     router.push("/");
     return post;
   } catch (error) {
-    throw new Error(error);
+    throw new Error(error, "server error");
   }
 };
 
@@ -25,7 +25,7 @@ export const getPosts = async () => {
     const posts = await res.json();
     return posts;
   } catch (error) {
-    throw new Error(error);
+    throw new Error(error, "server error");
   }
 };
 
@@ -36,7 +36,7 @@ export const getPost = async (id) => {
     const post = await res.json();
     return post;
   } catch (error) {
-    throw new Error(error);
+    throw new Error(error, "server error");
   }
 };
 
@@ -54,7 +54,7 @@ export const updatePost = async (id, data) => {
     router.push("/");
     return post;
   } catch (error) {
-    throw new Error(error);
+    throw new Error(error, "server error");
   }
 };
 
@@ -68,6 +68,6 @@ export const deletePost = async (id) => {
     router.push("/");
     return post;
   } catch (error) {
-    throw new Error(error);
+    throw new Error(error, "server error");
   }
 };

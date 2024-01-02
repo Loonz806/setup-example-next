@@ -1,7 +1,7 @@
 /* eslint-disable security/detect-object-injection */
 import fetch from "node-fetch";
 import { useState, useEffect, useRef } from "react";
-import { setDataToCache } from "../util/sessionCache";
+import { setDataToCache } from "../utils/sessionCache";
 
 const useFetch = (url) => {
   const cache = useRef({});

@@ -52,7 +52,7 @@ const cleanUpStorage = (data) => {
 
   // if 14 days have been passed, it removes the cache
   for (const key in data) {
-    console.log("key is", key);
+    // console.log("key is", key);
     const expiry = data[key].expiry;
     if (expiry && expiry <= currentTime()) {
       delete data[key];
