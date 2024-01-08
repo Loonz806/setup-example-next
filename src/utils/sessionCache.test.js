@@ -1,5 +1,5 @@
 import store from "store";
-import { getSessionCache, setDataToCache } from "./sessionCache";
+import { getSessionCache } from "./sessionCache";
 
 describe("the getSessionCache, and the setDataToCache functions", () => {
   beforeEach(() => {

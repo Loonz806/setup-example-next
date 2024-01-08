@@ -33,6 +33,9 @@ const HomePage = (props) => {
 };
 
 export async function getStaticProps() {
+  const env = process.env.NODE_ENV;
+  if (env !== "development") return;
+  console.log(env);
   try {
     const queryClient = new QueryClient();
     await queryClient.prefetchQuery({
