@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { Hydrate, QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
 import { FeatureToggle } from "../src/components/FeatureToggle/FeatureToggle";
 import { FeatureToggleService } from "../src/services/FeatureToggleService";
 import PropTypes from "prop-types";
@@ -7,6 +9,7 @@ import "../src/styles/globals.scss";
 
 const App = ({ Component, pageProps }) => {
   const [enabledFeatures, setEnabledFeatures] = useState([]);
+  const queryClient = new QueryClient();
   const processFeatures = async () => {
     const features = await FeatureToggleService();
     setEnabledFeatures(features);
@@ -17,11 +20,14 @@ const App = ({ Component, pageProps }) => {
   }, []);
 
   return (
-    <>
-      <FeatureToggle enabledFeatures={enabledFeatures}>
-        <Component {...pageProps} />
-      </FeatureToggle>
-    </>
+    <QueryClientProvider client={queryClient}>
+      <Hydrate state={pageProps.dehydratedState}>
+        <FeatureToggle enabledFeatures={enabledFeatures}>
+          <Component {...pageProps} />
+        </FeatureToggle>
+      </Hydrate>
+      <ReactQueryDevtools />
+    </QueryClientProvider>
   );
 };
 

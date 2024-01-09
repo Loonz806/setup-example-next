@@ -3,7 +3,7 @@ import styles from "./ExampleComponent.module.scss";
 
 const ExampleComponent = () => {
   return (
-    <div>
+    <div className={styles.exampleComponentContainer}>
       <h1 className={styles.error}>I am an example component</h1>
     </div>
   );
