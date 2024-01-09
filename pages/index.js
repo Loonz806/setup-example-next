@@ -10,11 +10,7 @@ import { useFeatureToggle } from "../src/hooks/useFeatureToggle";
 const HomePage = (props) => {
   const env = process.env.NODE_ENV;
   const posts = props?.dehydratedState?.queries[0]?.state?.data;
-
   const [isEnabled] = useFeatureToggle();
-  if (!posts) {
-    return <div>loading...</div>;
-  }
   return (
     <>
       <Head>
@@ -34,23 +30,26 @@ const HomePage = (props) => {
 
 export async function getStaticProps() {
   const env = process.env.NODE_ENV;
-  if (env !== "development") return;
-  console.log(env);
-  try {
-    const queryClient = new QueryClient();
-    await queryClient.prefetchQuery({
-      queryKey: "posts",
-      queryFn: getPosts,
-    });
-    return {
-      props: {
-        dehydratedState: dehydrate(queryClient),
-      },
-    };
-  } catch (error) {
-    console.log(error);
-    throw new Error(error);
+  if (env === "development") {
+    try {
+      const queryClient = new QueryClient();
+      await queryClient.prefetchQuery({
+        queryKey: "posts",
+        queryFn: getPosts,
+      });
+      return {
+        props: {
+          dehydratedState: dehydrate(queryClient),
+        },
+      };
+    } catch (error) {
+      console.log(error);
+      throw new Error(error);
+    }
   }
+  return {
+    props: {},
+  };
 }
 
 export default HomePage;
