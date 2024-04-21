@@ -74,7 +74,7 @@
     "@percy/cypress": "^3.1.2",
     "@swc/core": "^1.4.11",
     "@testing-library/cypress": "^10.0.1",
-    "cypress": "^13.6.5",
+    "cypress": "^13.7.1",
     "cypress-axe": "^1.5.0",
     "dotenv": "^16.4.4",
     "eslint-plugin-cypress": "^2.15.1",
