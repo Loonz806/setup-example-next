@@ -34,6 +34,13 @@
       "content": "Its a wonderful protein",
       "date": "Sat Dec 09 2023",
       "id": 5
+    },
+    {
+      "title": "On a Cruise to alaska",
+      "author": "Lenny Peters",
+      "content": "I am enjoying a Jameson whiskey and a beer",
+      "date": "Wed Jun 26 2024",
+      "id": 6
     }
   ],
   "comments": []

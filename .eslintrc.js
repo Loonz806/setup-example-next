@@ -14,6 +14,7 @@ module.exports = {
     "plugin:cypress/recommended",
     "next",
     "plugin:storybook/recommended",
+    "plugin:@tanstack/eslint-plugin-query/recommended",
   ],
   parserOptions: {
     ecmaFeatures: {

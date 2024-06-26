@@ -5,7 +5,7 @@ import styles from "./PostList.module.scss";
 const PostsLists = ({ posts }) => {
   const renderPosts = () => {
     try {
-      return posts.map((post) => {
+      return posts?.map((post) => {
         const { title, author, date, content, id } = post;
         return (
           <article className={styles.saleItem} key={id}>
@@ -24,7 +24,6 @@ const PostsLists = ({ posts }) => {
       throw new Error(e, "new error");
     }
   };
-
   return <div className={styles.postList}>{renderPosts()}</div>;
 };
 
